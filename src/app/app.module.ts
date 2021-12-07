@@ -1,3 +1,4 @@
+import { UsersModule } from './users/users.module';
 import { LayoutModule } from './layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     AppRoutingModule,
     MatSidenavModule,
     LayoutModule,
+    UsersModule,
     BrowserAnimationsModule
   ],
   providers: [],
