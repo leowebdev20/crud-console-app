@@ -1,1 +1,4 @@
-<p>list-users works!</p>
+<h1>{{listUsers.length}} Total Users</h1>
+<mat-list *ngFor="let user of listUsers">
+  <mat-list-item> {{user.name}}  {{user.username}} 	&nbsp; | 	&nbsp; <a [routerLink]="['/list/view', user.id]"> View</a> 	&nbsp; | 	&nbsp; <a [routerLink]="['/list/edit', user.id]"> Edit</a> 	&nbsp; | 	&nbsp; <a [routerLink]="['/list/delete', user.id]"> Delete</a></mat-list-item>
+ </mat-list>

@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  // listUsers: Array<MyClass> = new Array();
+  // listUsers: MyClass[] = [];
+  // listUsers: any = [];
+  listUsers: any = [];
 
   ngOnInit(): void {
+    this.userService.listUsers().subscribe(res => {
+      console.log(res);
+      this.listUsers = res;
+    })
   }
+
 
 }

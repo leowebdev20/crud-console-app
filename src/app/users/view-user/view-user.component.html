@@ -1,1 +1,6 @@
-<p>view-user works!</p>
+<mat-list *ngIf="singleUser">
+  <mat-list-item> {{singleUser.name}} </mat-list-item>
+  <mat-list-item> {{singleUser.company.name}}</mat-list-item>
+  <mat-list-item> {{singleUser.email}}</mat-list-item>
+  <mat-list-item> {{singleUser.website}}</mat-list-item>
+</mat-list>

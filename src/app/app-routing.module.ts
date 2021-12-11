@@ -8,14 +8,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'create', component: AddUserComponent },
-  { path: 'view/:id', component: ViewUserComponent },
-  { path: 'list', component: ListUsersComponent },
-  { path: 'delete/:id', component: DeleteUserComponent },
-  { path: 'edit/:id', component: EditUserComponent },
+  {
+    path: 'list',
+    children: [
+      { path: '', component: ListUsersComponent },
+      { path: 'view/:id', component: ViewUserComponent },
+      { path: 'delete/:id', component: DeleteUserComponent },
+      { path: 'edit/:id', component: EditUserComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
